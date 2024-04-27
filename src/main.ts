@@ -5,8 +5,8 @@ const textArea = document.getElementById('textContainer')!;
 const input = document.getElementById('input')! as HTMLTextAreaElement;
 input.placeholder = '手動接続用の入力欄';
 
-const user1Video = document.getElementById('user1Video') as HTMLVideoElement;
-const user2Video = document.getElementById('user2Video') as HTMLVideoElement;
+const localVideo = document.getElementById('localVideo') as HTMLVideoElement;
+const remoteVideo = document.getElementById('remoteVideo') as HTMLVideoElement;
 
 const createOfferButton = document.getElementById(
   'createOfferButton',
@@ -34,7 +34,7 @@ const user2Connection = new RTCPeerConnection();
 navigator.mediaDevices
   .getUserMedia({ audio: true, video: true })
   .then((stream) => {
-    user1Video.srcObject = stream;
+    localVideo.srcObject = stream;
     //音声トラックとビデオトラックをRTCPeerConnectionに登録
     stream.getTracks().forEach((track) => {
       user1Connection.addTrack(track, stream);
@@ -101,7 +101,7 @@ user1Connection.ontrack = (e) => {
     console.error('stream not found');
     throw new Error('');
   }
-  user2Video.srcObject = stream;
+  remoteVideo.srcObject = stream;
 };
 
 // ===== user2 ===== //
@@ -151,5 +151,5 @@ user2Connection.ontrack = (e) => {
     console.error('stream not found');
     throw new Error('');
   }
-  user2Video.srcObject = stream;
+  remoteVideo.srcObject = stream;
 };
