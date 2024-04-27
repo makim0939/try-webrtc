@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="videoContainer">
+      <div id="user1">
+        Local
+        <video id="user1Video" autoplay playsinline></video>
+      </div>
+      <div id="user2">
+        Remote
+        <video id="user2Video" autoplay playsinline></video>
+      </div>
+    </div>
+    <div class="buttonContainer">
+      <div class="offer">
+        <button id="createOfferButton">① Offerを生成</button>
+        <button id="setAnswerButton">④ Answerを登録</button>
+        <button id="copyIceCandidateButton">⑤ ICE経路情報をコピー</button>
+      </div>
+      <div class="sender">
+        <button id="createAnswerButton">③ Answerを生成</button>
+        <button id="setOfferButton">② Offerを登録</button>
+        <button id="setIceCandidateButton">⑥ ICE経路情報を登録</button>
+      </div>
+    </div>
+    <div class="infoContainer">
+      <textarea id="input" row="1"></textarea>
+      <div id="textContainer"></div>
+    </div>
+  </body>
+</html>
+
+<!-- const createOfferButton = document.createElement('button');
+const setAnswerButton = document.createElement('button');
+const copyIceCandidateButton = document.createElement('button');
+const createAnswerButton = document.createElement('button');
+const setOfferButton = document.createElement('button');
+const setIceCandidateButton = document.createElement('button');
+
+createOfferButton.textContent = '① Offerを生成';
+setAnswerButton.textContent = '④ Answerを登録';
+copyIceCandidateButton.textContent = '⑤ ICE経路情報をコピー';
+createAnswerButton.textContent = '③ Answerを生成';
+setOfferButton.textContent = '② Offerを登録';
+setIceCandidateButton.textContent = '⑥ ICE経路情報を登録'; -->

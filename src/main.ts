@@ -1,59 +1,32 @@
+import { doc } from 'prettier';
 import './style.css';
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  
-  <div class="container">
-    <div id="user1">Local</div>
-    <div id="user2">Remote</div>
-  </div>
-  <div class="common">
-    <textarea id="input" row="1"></textarea>
-    <div id="textContainer"></div>
-  </div>
-`;
 
 //エレメントの定義
 const textArea = document.getElementById('textContainer')!;
 const input = document.getElementById('input')! as HTMLTextAreaElement;
 input.placeholder = '手動接続用の入力欄';
 
-const user1Video = document.createElement('video');
-const user2Video = document.createElement('video');
-user1Video.autoplay = true;
-user1Video.playsInline = true;
-user2Video.autoplay = true;
-user2Video.playsInline = true;
+const user1Video = document.getElementById('user1Video') as HTMLVideoElement;
+const user2Video = document.getElementById('user2Video') as HTMLVideoElement;
 
-const createOfferButton = document.createElement('button');
-const setAnswerButton = document.createElement('button');
-const copyIceCandidateButton = document.createElement('button');
-const createAnswerButton = document.createElement('button');
-const setOfferButton = document.createElement('button');
-const setIceCandidateButton = document.createElement('button');
-
-createOfferButton.textContent = '① Offerを生成';
-setAnswerButton.textContent = '④ Answerを登録';
-copyIceCandidateButton.textContent = '⑤ ICE経路情報をコピー';
-createAnswerButton.textContent = '③ Answerを生成';
-setOfferButton.textContent = '② Offerを登録';
-setIceCandidateButton.textContent = '⑥ ICE経路情報を登録';
-
-document
-  .getElementById('user1')!
-  .append(
-    user1Video,
-    createOfferButton,
-    setAnswerButton,
-    copyIceCandidateButton,
-  );
-document
-  .getElementById('user2')!
-  .append(
-    user2Video,
-    setOfferButton,
-    createAnswerButton,
-    setIceCandidateButton,
-  );
+const createOfferButton = document.getElementById(
+  'createOfferButton',
+) as HTMLButtonElement;
+const setAnswerButton = document.getElementById(
+  'setAnswerButton',
+) as HTMLButtonElement;
+const copyIceCandidateButton = document.getElementById(
+  'copyIceCandidateButton',
+) as HTMLButtonElement;
+const createAnswerButton = document.getElementById(
+  'createAnswerButton',
+) as HTMLButtonElement;
+const setOfferButton = document.getElementById(
+  'setOfferButton',
+) as HTMLButtonElement;
+const setIceCandidateButton = document.getElementById(
+  'setIceCandidateButton',
+) as HTMLButtonElement;
 
 const user1Connection = new RTCPeerConnection();
 const user2Connection = new RTCPeerConnection();

@@ -7,7 +7,36 @@
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="videoContainer">
+        <div id="user1">
+          Local
+          <video id="user1Video" autoplay playsinline></video>
+        </div>
+        <div id="user2">
+          Remote
+          <video id="user2Video" autoplay playsinline></video>
+        </div>
+      </div>
+      <div class="buttonWrapper">
+        <div class="offer buttonContainer">
+          <p><b>| offer側の操作</b></p>
+          <button id="createOfferButton">① Offerを生成</button>
+          <button id="setAnswerButton">④ Answerを登録</button>
+          <button id="copyIceCandidateButton">⑤ ICE経路情報をコピー</button>
+        </div>
+        <div class="sender buttonContainer">
+          <p><b>| answer側の操作</b></p>
+          <button id="setOfferButton">② Offerを登録</button>
+          <button id="createAnswerButton">③ Answerを生成</button>
+          <button id="setIceCandidateButton">⑥ ICE経路情報を登録</button>
+        </div>
+      </div>
+      <div class="infoContainer">
+        <textarea id="input" row="1"></textarea>
+        <textarea id="textContainer"></textarea>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
