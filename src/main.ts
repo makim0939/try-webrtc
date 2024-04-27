@@ -1,4 +1,3 @@
-import { doc } from 'prettier';
 import './style.css';
 
 //エレメントの定義
