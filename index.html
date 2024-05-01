@@ -2,6 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebRTC ビデオチャット</title>
   </head>
@@ -18,13 +19,13 @@
         </div>
       </div>
       <div class="buttonWrapper">
-        <div class="offer buttonContainer">
+        <div class="buttonContainer">
           <p><b>| offer側の操作</b></p>
           <button id="createOfferButton">① Offerを生成</button>
           <button id="setAnswerButton">④ Answerを登録</button>
           <button id="copyIceCandidateButton">⑤ ICE経路情報をコピー</button>
         </div>
-        <div class="sender buttonContainer">
+        <div class="buttonContainer">
           <p><b>| answer側の操作</b></p>
           <button id="setOfferButton">② Offerを登録</button>
           <button id="createAnswerButton">③ Answerを生成</button>
@@ -32,10 +33,10 @@
         </div>
       </div>
       <div class="infoContainer">
-        <textarea id="input" row="1"></textarea>
+        <textarea id="input"></textarea>
         <textarea id="textContainer"></textarea>
       </div>
     </div>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
